@@ -7,8 +7,8 @@ function Activities(props) {
       <ul>
         {activities.map((activity, i) => (
           <li key={i}>
-            <h3>{activity.type}</h3>
-            <h3>{activity.location}</h3>
+            <p>{activity.type}</p>
+            <p>{activity.location}</p>
           </li>
         ))}
       </ul>

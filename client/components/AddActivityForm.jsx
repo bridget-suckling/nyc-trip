@@ -37,7 +37,7 @@ function AddActivityForm(props) {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="type">Activity:</label>
+        <label htmlFor="type">Activity: </label>
         <input
           type="text"
           name="type"
@@ -47,7 +47,7 @@ function AddActivityForm(props) {
         />
       </div>
       <div>
-        <label htmlFor="location">Location:</label>
+        <label htmlFor="location">Location: </label>
         <input
           type="text"
           name="location"
@@ -56,7 +56,9 @@ function AddActivityForm(props) {
           value={newActivity.location}
         />
       </div>
-      <button type="submit">Add activity</button>
+      <button className="button" type="submit">
+        Add activity
+      </button>
     </form>
   )
 }

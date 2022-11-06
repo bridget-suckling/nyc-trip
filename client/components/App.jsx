@@ -13,7 +13,7 @@ function App() {
 
   return (
     <main>
-      <h1>NYC</h1>
+      <h1>Plan your trip to NYC!</h1>
       <h2>{'Add an Activity here:'}</h2>
       <AddActivityForm onAddActivity={handleAddActivity} />
       <h2>{'Activities:'}</h2>
