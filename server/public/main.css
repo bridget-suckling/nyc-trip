@@ -1,5 +1,18 @@
 body {
-  background-color: #faf8f1;
-  color: #0a1520;
+  background-color: #DAB6BBff;
+  color: #311A3Eff;
   font-family: 'Poppins', sans-serif;
+  margin: 80px;
+}
+
+
+
+.button {
+  background-color: #8C7792ff;
+  color: white;
+  border-color: #311A3Eff;
+  border-style: solid;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 10px;
+
 }
