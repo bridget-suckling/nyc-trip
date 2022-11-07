@@ -7,8 +7,10 @@ function Activities(props) {
       <ul>
         {activities.map((activity, i) => (
           <li key={i}>
-            <p>{activity.type}</p>
-            <p>{activity.location}</p>
+            <p>Name: {activity.name}</p>
+            <p>Type: {activity.type}</p>
+            <p>Location: {activity.location}</p>
+            <p>Train Line: {activity.trainLine}</p>
           </li>
         ))}
       </ul>

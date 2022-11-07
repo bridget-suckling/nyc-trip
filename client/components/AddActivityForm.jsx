@@ -27,7 +27,7 @@ function AddActivityForm(props) {
       name: '',
       type: '',
       location: '',
-      train: '',
+      trainLine: '',
       neighbourLocations: '',
       time: '',
       website: '',
@@ -37,7 +37,17 @@ function AddActivityForm(props) {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="type">Activity: </label>
+        <label htmlFor="name">Name: </label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          onChange={handleChange}
+          value={newActivity.name}
+        />
+      </div>
+      <div>
+        <label htmlFor="type">Type: </label>
         <input
           type="text"
           name="type"
@@ -54,6 +64,16 @@ function AddActivityForm(props) {
           id="location"
           onChange={handleChange}
           value={newActivity.location}
+        />
+      </div>
+      <div>
+        <label htmlFor="trainLine">Train Line: </label>
+        <input
+          type="text"
+          name="trainLine"
+          id="trainLine"
+          onChange={handleChange}
+          value={newActivity.trainLine}
         />
       </div>
       <button className="button" type="submit">
