@@ -5,6 +5,7 @@ function Locations() {
     <section>
       <ul>
         <li>Upper East Side</li>
+        {/* All activities at Upper East side showing type, name and time of day */}
       </ul>
     </section>
   )
