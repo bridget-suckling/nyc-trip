@@ -6,6 +6,8 @@ module.exports = {
   getAllLocations,
   getLocationById,
   getActivitiesByLocation,
+  getAllActivities,
+  getActivity,
   updateActivity,
   addActivity,
   deleteActivity,
@@ -26,6 +28,16 @@ function getActivitiesByLocation(db = connection) {
     .join('locations', 'activities.location_id', 'locations.id')
     .where()
     .select()
+}
+
+// gets all activities
+function getAllActivities(db = connection) {
+  return db('activities').select()
+}
+
+// gets an activity
+function getActivity(id, db = connection) {
+  return db('activities').where('id', id).select().first()
 }
 
 // updates an activity
