@@ -2,39 +2,41 @@ import React, { useState } from 'react'
 import { apiAddActivity } from '../apiClient'
 
 function AddActivityForm(props) {
-  const { onAddActivity } = props
-  const [newActivity, setNewActivity] = useState({
+  const initialFormData = {
     name: '',
     type: '',
     location: '',
-    train: '',
-    neighbourLocations: '',
     time: '',
+    trainline: '',
+    cost: '',
     website: '',
-    notes: '',
-  })
+    comments: '',
+  }
+  const [form, setForm] = useState(initialFormData)
+  // const [activities, setActivities] = useState()
 
   function handleChange(event) {
-    setNewActivity({
-      ...newActivity,
-      [event.target.name]: event.target.value,
-    })
+    const { name, value } = event.target
+    const newForm = {
+      ...form,
+      [name]: value,
+    }
+    setForm(newForm)
   }
 
   function handleSubmit(event) {
     event.preventDefault()
-    onAddActivity(newActivity)
-    setNewActivity({
-      name: '',
-      type: '',
-      location: '',
-      trainLine: '',
-      neighbourLocations: '',
-      time: '',
-      website: '',
-      notes: '',
-    })
+    apiAddActivity(form)
+      .then((newActivity) => {
+        console.log(newActivity)
+        props.setActivities([...props.activities, newActivity])
+        setForm(initialFormData)
+      })
+      .catch((err) => {
+        console.error(err.message)
+      })
   }
+
   return (
     <form onSubmit={handleSubmit}>
       <div>
@@ -44,7 +46,7 @@ function AddActivityForm(props) {
           name="name"
           id="name"
           onChange={handleChange}
-          value={newActivity.name}
+          value={form.name}
         />
       </div>
       <div>
@@ -54,7 +56,7 @@ function AddActivityForm(props) {
           name="type"
           id="type"
           onChange={handleChange}
-          value={newActivity.type}
+          value={form.type}
         >
           <option value="">--- Select activity type ---</option>
           <option value="Food">Food</option>
@@ -70,7 +72,7 @@ function AddActivityForm(props) {
           name="location"
           id="location"
           onChange={handleChange}
-          value={newActivity.location}
+          value={form.location}
         >
           <option value="">--- Select location ---</option>
           <option value="Upper West Side">Upper West Side</option>
@@ -138,7 +140,7 @@ function AddActivityForm(props) {
           name="time"
           id="time"
           onChange={handleChange}
-          value={newActivity.time}
+          value={form.time}
         >
           <option value="">--- Select time ---</option>
           <option value="Morning">Morning</option>
@@ -154,7 +156,7 @@ function AddActivityForm(props) {
           name="trainLine"
           id="trainLine"
           onChange={handleChange}
-          value={newActivity.trainLine}
+          value={form.trainLine}
         />
       </div>
       <div>
@@ -164,7 +166,7 @@ function AddActivityForm(props) {
           name="website"
           id="website"
           onChange={handleChange}
-          value={newActivity.website}
+          value={form.website}
         />
       </div>
       <div>
@@ -174,7 +176,7 @@ function AddActivityForm(props) {
           name="notes"
           id="notes"
           onChange={handleChange}
-          value={newActivity.notes}
+          value={form.notes}
         />
       </div>
       <button className="button" type="submit">

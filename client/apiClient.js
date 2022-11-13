@@ -28,10 +28,7 @@ export function apiAddActivity(form) {
     .post(activitiesURL)
     .send(form)
     .then((res) => {
-      const location = res.body.location
-      return location
-    })
-    .then((location) => {
-      return apiGetActivitiesAtLocation(location)
+      const activity = res.body
+      return activity
     })
 }
