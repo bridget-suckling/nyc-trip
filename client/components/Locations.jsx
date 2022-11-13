@@ -15,14 +15,11 @@ function Locations() {
   }, [])
   return (
     <div>
+      <h3>NYC Locations</h3>
       <ul>
         {locations &&
-          locations.map(({ id, name, code, neighbours }) => {
-            return (
-              <li key={id}>
-                Name: {name} Code: {code} Neighbours: {neighbours}
-              </li>
-            )
+          locations.map(({ id, name }) => {
+            return <li key={id}>{name}</li>
           })}
       </ul>
     </div>
