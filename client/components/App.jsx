@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+// import { Route, Routes } from 'react-router-dom'
 import Activities from './Activities'
 import AddActivityForm from './AddActivityForm'
 // import Nav from './Nav'
@@ -24,6 +24,7 @@ function App() {
       <AddActivityForm onAddActivity={handleAddActivity} />
       <h2>{'Activities:'}</h2>
       <Activities activities={activities} />
+      <Locations />
     </main>
   )
 }
