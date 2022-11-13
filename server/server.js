@@ -10,6 +10,6 @@ server.use(express.json())
 server.use(express.static(path.join(__dirname, 'public')))
 
 server.use('/api/v1/activities', activities)
-server.use('api/v1/locations', locations)
+server.use('/api/v1/locations', locations)
 
 module.exports = server

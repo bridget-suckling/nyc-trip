@@ -7,10 +7,12 @@ function Activities(props) {
       <ul>
         {activities.map((activity, i) => (
           <li key={i}>
-            <p>Name: {activity.name}</p>
-            <p>Type: {activity.type}</p>
-            <p>Location: {activity.location}</p>
-            <p>Train Line: {activity.trainLine}</p>
+            <p>
+              Name: {activity.name}
+              Type: {activity.type}
+              Location: {activity.location}
+              Train Line: {activity.trainLine}
+            </p>
           </li>
         ))}
       </ul>
