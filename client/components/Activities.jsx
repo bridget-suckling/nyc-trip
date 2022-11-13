@@ -1,18 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { apiGetActivities } from '../apiClient'
 
-function Activities(props) {
-  const { activities } = props
+function Activities() {
+  const [activities, setActivities] = useState([])
+  useEffect(() => {
+    apiGetActivities()
+      .then((activitiesData) => {
+        setActivities(activitiesData)
+      })
+      .catch((e) => {
+        console.log(e)
+      })
+  }, [])
   return (
     <section>
       <ul>
         {activities.map((activity, i) => (
           <li key={i}>
-            <p>
-              Name: {activity.name}
-              Type: {activity.type}
-              Location: {activity.location}
-              Train Line: {activity.trainLine}
-            </p>
+            {activity.name}
+            <em> ({activity.type})</em>
           </li>
         ))}
       </ul>
