@@ -19,7 +19,7 @@ function getAllLocations(db = connection) {
 
 // returns a specific location by id
 function getLocationById(id, db = connection) {
-  return db('locations').where('locations,id', id).select().first()
+  return db('locations').where('locations.id', id).select().first()
 }
 
 // returns list of activities and their locations
