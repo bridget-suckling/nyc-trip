@@ -1,22 +1,22 @@
 import request from 'superagent'
-const locationsURL = '/api/v1/locations'
-const activitiesURL = '/api/v1/activities'
+const locationsUrl = '/api/v1/locations'
+const activitiesUrl = '/api/v1/activities'
 
 export function apiGetLocations() {
-  return request.get(locationsURL).then((response) => {
+  return request.get(locationsUrl).then((response) => {
     return response.body
   })
 }
 
 export function apiGetActivities() {
-  return request.get(activitiesURL).then((response) => {
+  return request.get(activitiesUrl).then((response) => {
     return response.body
   })
 }
 
 export function apiGetActivitiesAtLocation(location) {
   return request
-    .get(locationsURL)
+    .get(locationsUrl)
     .where('location', location)
     .then((response) => {
       return response.body
@@ -25,10 +25,9 @@ export function apiGetActivitiesAtLocation(location) {
 
 export function apiAddActivity(form) {
   return request
-    .post(activitiesURL)
+    .post('/api/v1/activities')
     .send(form)
     .then((res) => {
-      const activity = res.body
-      return activity
+      return res.body
     })
 }

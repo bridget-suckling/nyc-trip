@@ -20,8 +20,8 @@ router.post('/', (req, res) => {
     .then((newActivityIdArr) => {
       return db.getActivity(newActivityIdArr[0])
     })
-    .then((activity) => {
-      res.json(activity)
+    .then((newActivity) => {
+      res.json(newActivity)
     })
     .catch((err) => {
       res.status(500).send(err.message)

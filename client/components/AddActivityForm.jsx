@@ -13,7 +13,7 @@ function AddActivityForm(props) {
     comments: '',
   }
   const [form, setForm] = useState(initialFormData)
-  // const [activities, setActivities] = useState()
+  // const [activities, setActivities] = useState([''])
 
   function handleChange(event) {
     const { name, value } = event.target
@@ -28,7 +28,6 @@ function AddActivityForm(props) {
     event.preventDefault()
     apiAddActivity(form)
       .then((newActivity) => {
-        console.log(newActivity)
         props.setActivities([...props.activities, newActivity])
         setForm(initialFormData)
       })

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { apiGetActivities } from '../apiClient'
+import AddActivityForm from './AddActivityForm'
 
 function Activities() {
   const [activities, setActivities] = useState([])
@@ -13,16 +14,19 @@ function Activities() {
       })
   }, [])
   return (
-    <section>
-      <ul>
-        {activities.map((activity, i) => (
-          <li key={i}>
-            {activity.name}
-            <em> ({activity.type})</em>
-          </li>
-        ))}
-      </ul>
-    </section>
+    <>
+      <AddActivityForm activities={activities} />
+      <section>
+        <ul>
+          {activities.map(({ id, name, type }) => (
+            <li key={id}>
+              {name}
+              <em> ({type})</em>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </>
   )
 }
 

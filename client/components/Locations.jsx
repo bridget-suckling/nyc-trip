@@ -13,9 +13,10 @@ function Locations() {
         console.log(e)
       })
   }, [])
+
   return (
     <div>
-      <h3>NYC Locations</h3>
+      <h2>Locations:</h2>
       <ul>
         {locations &&
           locations.map(({ id, name }) => {
