@@ -16,7 +16,7 @@ function Locations() {
 
   return (
     <div>
-      <h2>Locations:</h2>
+      <h1>Locations:</h1>
       <ul>
         {locations &&
           locations.map(({ id, name }) => {
