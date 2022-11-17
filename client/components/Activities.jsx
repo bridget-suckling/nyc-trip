@@ -17,9 +17,11 @@ function Activities() {
       <h1>Activities:</h1>
       <section>
         <ul>
-          {activities.map(({ id, name, type }) => (
+          {activities.map(({ id, name, type, url }) => (
             <li key={id}>
-              {name}
+              <a href={url} target="blank">
+                {name}
+              </a>
               <em> ({type})</em>
             </li>
           ))}
