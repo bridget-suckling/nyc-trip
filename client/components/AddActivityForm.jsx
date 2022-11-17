@@ -36,7 +36,7 @@ function AddActivityForm() {
 
   return (
     <>
-      <h1>Add an Activity:</h1>
+      <h2>Add an Activity:</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name: </label>

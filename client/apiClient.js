@@ -31,3 +31,12 @@ export function apiAddActivity(form) {
       return res.body
     })
 }
+
+export function apiUpdateActivity(id, updatedActivity) {
+  return request
+    .patch('/api/v1/activities/:id')
+    .send(id, updatedActivity)
+    .then((res) => {
+      return res.json('updated')
+    })
+}

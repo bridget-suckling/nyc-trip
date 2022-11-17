@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { apiGetActivities } from '../apiClient'
+import UpdateActivity from './UpdateActivities'
 
 function Activities() {
   const [activities, setActivities] = useState([])
@@ -26,6 +27,7 @@ function Activities() {
             </li>
           ))}
         </ul>
+        <UpdateActivity activities={activities} />
       </section>
     </>
   )
