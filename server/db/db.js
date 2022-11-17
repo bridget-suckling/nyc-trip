@@ -47,7 +47,7 @@ function updateActivity(id, updatedActivity, db = connection) {
 
 // adds a new activity
 function addActivity(newActivity, db = connection) {
-  return db('activities').insert({ newActivity })
+  return db('activities').insert(newActivity)
 }
 
 // deletes an activity
