@@ -24,10 +24,10 @@ function Activities() {
                 {name}
               </a>
               <em> ({type})</em>
+              <UpdateActivity activities={activities} />
             </li>
           ))}
         </ul>
-        <UpdateActivity activities={activities} />
       </section>
     </>
   )

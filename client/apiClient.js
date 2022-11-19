@@ -14,6 +14,15 @@ export function apiGetActivities() {
   })
 }
 
+export function apiGetActivity(id) {
+  return request
+    .get(activitiesUrl)
+    .where('id', id)
+    .then((response) => {
+      return response.body
+    })
+}
+
 export function apiGetActivitiesAtLocation(location) {
   return request
     .get(locationsUrl)
@@ -39,4 +48,11 @@ export function apiUpdateActivity(id, updatedActivity) {
     .then((res) => {
       return res.json('updated')
     })
+}
+
+export function apiDeleteActivity(id) {
+  return request
+    .delete('/api/v1/activities/')
+    .send(id)
+    .then((res) => res.body)
 }
