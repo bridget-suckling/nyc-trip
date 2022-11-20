@@ -63,7 +63,7 @@ function AddActivityForm(props) {
 
       {showForm || !props.activity ? (
         <>
-          {props.activity ? null : <h2>Add an Activity:</h2>}
+          {props.activity ? null : <h3>New Activity</h3>}
           <form onSubmit={handleSubmit}>
             <div>
               <label htmlFor="name">Name: </label>

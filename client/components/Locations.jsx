@@ -4,19 +4,10 @@ function Locations(props) {
   const locations = props.locations
   const handleChange = props.handleChange
 
-  // function handleChange(event) {
-  //   const id = event.target.value
-  //   apiGetActivitiesAtLocation(id)
-  //     .then((response) => {
-  //       console.log('response', response)
-  //     })
-  //     .catch((e) => console.error(e))
-  // }
-
   return (
     <>
       <div>
-        <label htmlFor="location_id">View activities by location: </label>
+        <label htmlFor="location_id">View activities by location</label>
         <br></br>
         <select
           className="largeinput"

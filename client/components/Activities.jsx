@@ -35,7 +35,6 @@ function Activities(props) {
 
   return (
     <>
-      <br></br>
       <Locations locations={props.locations} handleChange={handleChange} />
       <section>
         <br></br>

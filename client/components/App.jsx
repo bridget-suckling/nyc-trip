@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Activities from './Activities'
 import Home from './Home'
-import Locations from './Locations'
+import Type from './Type'
 import AddActivityForm from './AddActivityForm'
 import { apiGetLocations } from '../apiClient'
 
@@ -32,6 +32,7 @@ function App() {
             path="/add"
             element={<AddActivityForm locations={locations} />}
           />
+          <Route path="/type" element={<Type />} />
         </Routes>
       </main>
     </>

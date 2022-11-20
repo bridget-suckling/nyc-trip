@@ -11,13 +11,18 @@ function Home() {
           View activities
         </Link>
       </button>
-      <br></br>
+      <button className="button" key="3">
+        <Link to="/type" className="link">
+          View activities by type
+        </Link>
+      </button>
 
       <button className="button" key="3">
         <Link to="/add" className="link">
           Add an activity
         </Link>
       </button>
+      <br></br>
       <br></br>
     </div>
   )
