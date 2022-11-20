@@ -5,13 +5,10 @@ body {
   margin: 80px;
 }
 
-
-
 .button {
   background-color: #8C7792ff;
   color: white;
   border-color: #8C7792ff;
-  border-radius: 5px;
   border-style: solid;
   font-family: 'Poppins', sans-serif;
   margin-top: 10px;
@@ -22,12 +19,9 @@ body {
   background-color: #8C7792ff;
   color: white;
   font-size:x-small;
-  border-color: #8C7792ff;
-  border-radius: 5px;
-  border-style: solid;
+  border-style: none;
   font-family: 'Poppins', sans-serif;
-  margin-top: 10px;
-  margin-right: 10px
+  margin-right: 2px
 }
 
 .link {
