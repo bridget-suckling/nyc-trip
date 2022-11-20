@@ -28,6 +28,10 @@ body {
   color: white;
   text-decoration: none;
 }
+.headinglink {
+  color: #311A3Eff;
+  text-decoration: none;
+}
 
 ul {
   list-style-type: none; 

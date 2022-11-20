@@ -17,7 +17,7 @@ function Type(props) {
         >
           <option value="">--- Select activity type ---</option>
           <option value="Food">Food</option>
-          <option value="Museum or gallery">Museum or gallery</option>
+          <option value="Museum or gallery">Museum / gallery</option>
           <option value="Shopping">Shopping</option>
           <option value="Activity">Activity</option>
         </select>

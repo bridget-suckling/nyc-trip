@@ -24,6 +24,7 @@ function App() {
       <main>
         <Routes>
           <Route path="*" />
+          <Route path="/" />
           <Route
             path="/activities"
             element={<Activities locations={locations} />}

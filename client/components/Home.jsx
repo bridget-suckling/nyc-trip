@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom'
 function Home() {
   return (
     <div>
-      <h1>Plan a trip to New York City.</h1>
+      <Link className="headinglink" to="/">
+        <h1>Plan a trip to New York City.</h1>
+      </Link>
 
       <button className="button" key="4">
         <Link to="/activities" className="link">
