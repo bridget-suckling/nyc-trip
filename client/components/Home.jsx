@@ -13,7 +13,7 @@ function Home() {
           View activities
         </Link>
       </button>
-      <button className="button" key="3">
+      <button className="button" key="5">
         <Link to="/type" className="link">
           View activities by type
         </Link>

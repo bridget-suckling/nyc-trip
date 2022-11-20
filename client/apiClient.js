@@ -18,7 +18,6 @@ export function apiGetActivity(id) {
 }
 
 export function apiGetActivitiesAtLocation(id) {
-  console.log('api', id)
   return request.get(`/api/v1/locations/${id}`).then((res) => res.body)
 }
 

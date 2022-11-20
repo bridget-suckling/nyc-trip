@@ -24,7 +24,6 @@ function getLocationById(id, db = connection) {
 
 // returns list of activities and their locations
 function getActivitiesByLocation(locationId, db = connection) {
-  console.log(locationId)
   return db('activities').where('activities.location_id', locationId).select()
 }
 
