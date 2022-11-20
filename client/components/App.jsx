@@ -25,10 +25,6 @@ function App() {
         <Routes>
           <Route path="*" />
           <Route
-            path="/locations"
-            element={<Locations locations={locations} />}
-          />
-          <Route
             path="/activities"
             element={<Activities locations={locations} />}
           />

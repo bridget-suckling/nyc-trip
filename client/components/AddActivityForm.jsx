@@ -146,13 +146,13 @@ function AddActivityForm(props) {
               />
             </div>
             <div>
-              <label htmlFor="notes">Notes: </label>
+              <label htmlFor="comments">Comments: </label>
               <input
                 type="text"
-                name="notes"
-                id="notes"
+                name="comments"
+                id="comments"
                 onChange={handleChange}
-                value={form.notes}
+                value={form.comments}
               />
             </div>
             <button className="button" type="submit">

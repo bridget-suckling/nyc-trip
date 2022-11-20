@@ -5,12 +5,6 @@ function Home() {
   return (
     <div>
       <h1>Plan your trip!</h1>
-      <button className="button" key="2">
-        <Link to="/locations" className="link">
-          Locations
-        </Link>
-      </button>
-      <br></br>
 
       <button className="button" key="4">
         <Link to="/activities" className="link">
@@ -24,6 +18,7 @@ function Home() {
           Add an activity
         </Link>
       </button>
+      <br></br>
     </div>
   )
 }

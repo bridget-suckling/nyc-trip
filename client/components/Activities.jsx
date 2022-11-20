@@ -35,8 +35,9 @@ function Activities(props) {
 
   return (
     <>
+      <br></br>
       <Locations locations={props.locations} handleChange={handleChange} />
-      <h1>Activities:</h1>
+      <h2>Activities:</h2>
       <section>
         <ul>
           {activities.map((activity) => (
