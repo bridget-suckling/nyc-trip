@@ -13,7 +13,7 @@ export function requestLocations() {
 export function receiveLocations(locations) {
   return {
     type: RECEIVE_LOCATIONS,
-    payload: locations,
+    payload: locations.map((location) => location.data),
   }
 }
 
@@ -29,6 +29,7 @@ export function fetchLocationsAction() {
     dispatch(requestLocations())
     return fetchLocations()
       .then((locations) => {
+        console.log(locations)
         dispatch(receiveLocations(locations))
       })
       .catch((err) => {

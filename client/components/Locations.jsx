@@ -1,6 +1,5 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { fetchLocationsAction } from '../Actions/index'
+import { useSelector } from 'react-redux'
 
 function Locations(props) {
   // const locations = props.locations
@@ -8,7 +7,7 @@ function Locations(props) {
 
   // const locations = useSelector((state) => state.locations)
   const locations = useSelector((globalState) => globalState.locations)
-  console.log(locations)
+  console.log('jsx', locations)
 
   return (
     <>
@@ -21,6 +20,7 @@ function Locations(props) {
           name="location_id"
           id="location_id"
           onChange={handleChange}
+          // value={locations.location_id}
           value={locations.location_id}
         >
           <option value="0">--- Select location ---</option>
