@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { fetchLocationsAction } from '../Actions/index'
 
 function Locations(props) {
@@ -7,8 +7,8 @@ function Locations(props) {
   const handleChange = props.handleChange
 
   // const locations = useSelector((state) => state.locations)
-  const dispatch = useDispatch()
-  const locations = dispatch(fetchLocationsAction())
+  const locations = useSelector((globalState) => globalState.locations)
+  console.log(locations)
 
   return (
     <>
