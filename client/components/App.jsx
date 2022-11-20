@@ -4,10 +4,12 @@ import Activities from './Activities'
 import Home from './Home'
 import Type from './Type'
 import AddActivityForm from './AddActivityForm'
-import { apiGetLocations } from '../apiClient'
+// import { apiGetLocations } from '../apiClient'
+import { useSelector } from 'react-redux'
 
 function App() {
-  const [locations, setLocations] = useState([])
+  const locations = useSelector((state) => state.locations)
+  // const [locations, setLocations] = useState([])
 
   useEffect(() => {
     apiGetLocations()
