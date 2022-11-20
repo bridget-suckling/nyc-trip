@@ -3,8 +3,9 @@ import { apiGetActivities, apiDeleteActivity } from '../apiClient'
 import DeleteActivity from './DeleteActivity'
 import AddActivityForm from './AddActivityForm'
 
-function Activities() {
+function Activities(props) {
   const [activities, setActivities] = useState([])
+
   useEffect(() => {
     apiGetActivities()
       .then((activitiesData) => {
@@ -38,7 +39,10 @@ function Activities() {
               </a>
               <em> ({activity.type})</em>
               <> </>
-              <AddActivityForm activity={activity} />
+              <AddActivityForm
+                activity={activity}
+                locations={props.locations}
+              />
               <DeleteActivity
                 handleDeleteButton={handleDeleteButton}
                 activityId={activity.id}
