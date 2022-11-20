@@ -1,24 +1,26 @@
 import React, { useState, useEffect } from 'react'
-import { apiGetActivities, apiDeleteActivity } from '../apiClient'
+import { apiGetActivitiesAtLocation, apiDeleteActivity } from '../apiClient'
 import DeleteActivity from './DeleteActivity'
 import AddActivityForm from './AddActivityForm'
+import Locations from './Locations'
 
 function Activities(props) {
   const [activities, setActivities] = useState([])
+  const [filterId, setFilterId] = useState('0')
 
   useEffect(() => {
-    apiGetActivities()
+    apiGetActivitiesAtLocation(filterId)
       .then((activitiesData) => {
         setActivities(activitiesData)
       })
       .catch((e) => {
         console.log(e)
       })
-  }, [])
+  }, [filterId])
 
   function handleDeleteButton(id) {
     apiDeleteActivity(id)
-      .then(() => apiGetActivities())
+      .then(() => apiGetActivitiesAtLocation(filterId))
       .then((activitiesData) => {
         setActivities(activitiesData)
       })
@@ -26,9 +28,14 @@ function Activities(props) {
         console.log(e)
       })
   }
+  function handleChange(event) {
+    const id = event.target.value
+    setFilterId(id)
+  }
 
   return (
     <>
+      <Locations locations={props.locations} handleChange={handleChange} />
       <h1>Activities:</h1>
       <section>
         <ul>
