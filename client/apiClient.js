@@ -17,11 +17,9 @@ export function apiGetActivity(id) {
     .then((res) => res.body)
 }
 
-export function apiGetActivitiesAtLocation(location) {
-  return request
-    .get(locationsUrl)
-    .where('location', location)
-    .then((res) => res.body)
+export function apiGetActivitiesAtLocation(id) {
+  console.log('api', id)
+  return request.get(`/api/v1/locations/${id}`).then((res) => res.body)
 }
 
 export function apiAddActivity(form) {
@@ -31,16 +29,16 @@ export function apiAddActivity(form) {
     .then((res) => res.body)
 }
 
-export function apiUpdateActivity(id, updatedActivity) {
+export function apiUpdateActivity(updatedActivity) {
   return request
-    .patch('/api/v1/activities/:id')
-    .send(id, updatedActivity)
+    .patch('/api/v1/activities')
+    .send(updatedActivity)
     .then((res) => res.body)
 }
 
 export function apiDeleteActivity(id) {
   return request
-    .delete('/api/v1/activities/')
+    .delete('/api/v1/activities')
     .send(id)
     .then((res) => res.body)
 }

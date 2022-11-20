@@ -1,29 +1,39 @@
-import React, { useState, useEffect } from 'react'
-import { apiGetLocations } from '../apiClient'
+import React from 'react'
+import { apiGetActivitiesAtLocation } from '../apiClient'
 
-function Locations() {
-  const [locations, setLocations] = useState([])
+function Locations(props) {
+  const locations = props.locations
 
-  useEffect(() => {
-    apiGetLocations()
-      .then((locationsData) => {
-        setLocations(locationsData)
+  function handleChange(event) {
+    const id = event.target.value
+    apiGetActivitiesAtLocation(id)
+      .then((response) => {
+        console.log('response', response)
       })
-      .catch((e) => {
-        console.log(e)
-      })
-  }, [])
+      .catch((e) => console.error(e))
+  }
 
   return (
-    <div>
-      <h1>Locations:</h1>
-      <ul>
-        {locations &&
-          locations.map(({ id, name }) => {
-            return <li key={id}>{name}</li>
-          })}
-      </ul>
-    </div>
+    <>
+      <div>
+        <label htmlFor="location_id">Location: </label>
+        <select
+          type="text"
+          name="location_id"
+          id="location_id"
+          onChange={handleChange}
+          value={locations.location_id}
+        >
+          <option value="">--- Select location ---</option>
+          {props.locations &&
+            props.locations.map(({ id, name }) => (
+              <option key={id} value={id}>
+                {name}
+              </option>
+            ))}
+        </select>
+      </div>
+    </>
   )
 }
 

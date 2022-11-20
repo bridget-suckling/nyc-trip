@@ -40,10 +40,9 @@ router.delete('/', (req, res) => {
     })
 })
 
-router.patch('/:id', (req, res) => {
+router.patch('/', (req, res) => {
   const activity = req.body
-  const id = req.params.id
-  db.updateActivity(id, activity)
+  db.updateActivity(activity.id, activity)
     .then(() => {
       res.json('updated')
     })
