@@ -16,8 +16,10 @@ function Locations(props) {
   return (
     <>
       <div>
-        <label htmlFor="location_id">Location: </label>
+        <label htmlFor="location_id">View activities by location: </label>
+        <br></br>
         <select
+          className="largeinput"
           type="text"
           name="location_id"
           id="location_id"

@@ -10,16 +10,54 @@ body {
 .button {
   background-color: #8C7792ff;
   color: white;
-  border-color: #311A3Eff;
+  border-color: #8C7792ff;
+  border-radius: 5px;
   border-style: solid;
   font-family: 'Poppins', sans-serif;
   margin-top: 10px;
   margin-right: 10px
-  
 
+}
+.smallbutton {
+  background-color: #8C7792ff;
+  color: white;
+  font-size:x-small;
+  border-color: #8C7792ff;
+  border-radius: 5px;
+  border-style: solid;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 10px;
+  margin-right: 10px
 }
 
 .link {
   color: white;
   text-decoration: none;
+}
+
+ul {
+  list-style-type: none; 
+  padding: 0; 
+  margin: 0; 
+}
+
+input {
+  border-radius: 5px;
+  border-style: solid;
+  border-color: white;
+  margin: 10px,
+}
+.largeinput {
+  font-size: large;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: white;
+  margin: 10px,
+}
+
+select {
+  border-radius: 5px;
+  border-style: solid;
+  border-color: white;
+  margin: 10px,
 }

@@ -37,8 +37,8 @@ function Activities(props) {
     <>
       <br></br>
       <Locations locations={props.locations} handleChange={handleChange} />
-      <h2>Activities:</h2>
       <section>
+        <br></br>
         <ul>
           {activities.map((activity) => (
             <li key={activity.id}>

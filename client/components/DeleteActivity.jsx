@@ -6,7 +6,7 @@ function DeleteActivity(props) {
   return (
     <>
       <button
-        className="button"
+        className="smallbutton"
         onClick={() => props.handleDeleteButton({ id })}
       >
         Delete

@@ -56,8 +56,8 @@ function AddActivityForm(props) {
   return (
     <>
       {props.activity ? (
-        <button className="button" onClick={handleUpdateButton}>
-          Update
+        <button className="smallbutton" onClick={handleUpdateButton}>
+          Edit
         </button>
       ) : null}
 
@@ -158,7 +158,7 @@ function AddActivityForm(props) {
             <button className="button" type="submit">
               {props.activity
                 ? `Update ${props.activity.name}`
-                : 'Add an Activity'}
+                : 'Add Activity'}
             </button>
           </form>
         </>
