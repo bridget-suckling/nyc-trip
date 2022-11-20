@@ -1,28 +1,11 @@
-import React, { useState, useEffect } from 'react'
-import { apiGetActivities } from '../apiClient'
+import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Activities from './Activities'
 import Home from './Home'
 import Locations from './Locations'
 import AddActivityForm from './AddActivityForm'
-import UpdateActivity from './UpdateActivities'
 
 function App() {
-  const [activities, setActivities] = useState([])
-
-  function getActivities() {
-    apiGetActivities()
-      .then((activities) => {
-        setActivities(activities)
-      })
-      .catch((err) => {
-        console.error(err)
-      })
-  }
-  useEffect(() => {
-    getActivities()
-  }, [])
-
   return (
     <>
       <Home />

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { apiGetActivities, apiDeleteActivity } from '../apiClient'
-import UpdateActivities from './UpdateActivities'
 import DeleteActivity from './DeleteActivity'
+import AddActivityForm from './AddActivityForm'
 
 function Activities() {
   const [activities, setActivities] = useState([])
@@ -31,16 +31,17 @@ function Activities() {
       <h1>Activities:</h1>
       <section>
         <ul>
-          {activities.map(({ id, name, type, url }) => (
-            <li key={id}>
-              <a href={url} target="blank">
-                {name}
+          {activities.map((activity) => (
+            <li key={activity.id}>
+              <a href={activity.url} target="blank">
+                {activity.name}
               </a>
-              <em> ({type})</em>
-              <UpdateActivities activities={activities} />
+              <em> ({activity.type})</em>
+              <> </>
+              <AddActivityForm activity={activity} />
               <DeleteActivity
                 handleDeleteButton={handleDeleteButton}
-                activityId={id}
+                activityId={activity.id}
               />
             </li>
           ))}

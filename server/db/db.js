@@ -42,7 +42,7 @@ function getActivity(id, db = connection) {
 
 // updates an activity
 function updateActivity(id, updatedActivity, db = connection) {
-  return db('activities').where('activities.id', id).update({ updatedActivity })
+  return db('activities').where('id', id).update({ updatedActivity })
 }
 
 // adds a new activity

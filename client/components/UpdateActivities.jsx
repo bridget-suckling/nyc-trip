@@ -1,33 +1,33 @@
-import React, { useState } from 'react'
-import {
-  apiUpdateActivity,
-  apiDeleteActivity,
-  apiGetActivities,
-  apiGetActivity,
-} from '../apiClient'
-import AddActivityForm from './AddActivityForm'
+// import React, { useState } from 'react'
+// import {
+//   apiUpdateActivity,
+//   apiDeleteActivity,
+//   apiGetActivities,
+//   apiGetActivity,
+// } from '../apiClient'
+// import AddActivityForm from './AddActivityForm'
 
-function UpdateActivities(props) {
-  const [updating, setUpdating] = useState(false)
-  const activities = props.activities
-  return updating ? (
-    <AddActivityForm
-      apiUpdateActivity={apiUpdateActivity}
-      activities={activities}
-      variant="update"
-      setUpdating={setUpdating}
-    />
-  ) : (
-    <div>
-      <div>
-        <p>{activities.name}</p>
-      </div>
-      <button className="button" onClick={() => setUpdating(true)}>
-        Update
-      </button>
-    </div>
-  )
-}
+// function UpdateActivities(props) {
+//   const [updating, setUpdating] = useState(false)
+//   const activities = props.activities
+//   return updating ? (
+//     <AddActivityForm
+//       apiUpdateActivity={apiUpdateActivity}
+//       activities={activities}
+//       variant="update"
+//       setUpdating={setUpdating}
+//     />
+//   ) : (
+//     <div>
+//       <div>
+//         <p>{activities.name}</p>
+//       </div>
+//       <button className="button" onClick={() => setUpdating(true)}>
+//         Update
+//       </button>
+//     </div>
+//   )
+// }
 
 // function UpdateActivity(props) {
 //   const activityFormData = {
