@@ -1,13 +1,9 @@
-import { RECEIVE_LOCATIONS } from '../Actions'
+import { combineReducers } from 'redux'
 
-function locations(state = [], action) {
-  const { type, payload } = action
-  switch (type) {
-    case RECEIVE_LOCATIONS:
-      return payload
-    default:
-      return state
-  }
-}
+import locationsReducer from './locations'
 
-export default locations
+const reducer = combineReducers({
+  locations: locationsReducer,
+})
+
+export default reducer
