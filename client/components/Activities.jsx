@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { apiGetActivitiesAtLocation, apiDeleteActivity } from '../apiClient'
+import {
+  apiGetActivitiesAtLocation,
+  apiDeleteActivity,
+} from '../apis/apiClient'
 import DeleteActivity from './DeleteActivity'
 import AddActivityForm from './AddActivityForm'
 import Locations from './Locations'

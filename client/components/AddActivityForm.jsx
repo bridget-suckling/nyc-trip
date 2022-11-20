@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { apiAddActivity, apiUpdateActivity } from '../apiClient'
+import { apiAddActivity, apiUpdateActivity } from '../apis/apiClient'
 
 function AddActivityForm(props) {
   const activity = props.activity

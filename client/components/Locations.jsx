@@ -1,8 +1,14 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { fetchLocationsAction } from '../Actions/index'
 
 function Locations(props) {
-  const locations = props.locations
+  // const locations = props.locations
   const handleChange = props.handleChange
+
+  // const locations = useSelector((state) => state.locations)
+  const dispatch = useDispatch()
+  const locations = dispatch(fetchLocationsAction())
 
   return (
     <>
@@ -18,8 +24,8 @@ function Locations(props) {
           value={locations.location_id}
         >
           <option value="0">--- Select location ---</option>
-          {props.locations &&
-            props.locations.map(({ id, name }) => (
+          {locations &&
+            locations.map(({ id, name }) => (
               <option key={id} value={id}>
                 {name}
               </option>
