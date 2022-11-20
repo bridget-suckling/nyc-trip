@@ -52,5 +52,6 @@ function addActivity(newActivity, db = connection) {
 
 // deletes an activity
 function deleteActivity(id, db = connection) {
-  return db('activities').where('id', id).del()
+  console.log('db', id)
+  return db('activities').where('id', id).delete()
 }

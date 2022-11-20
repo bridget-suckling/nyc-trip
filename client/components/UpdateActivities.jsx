@@ -7,36 +7,23 @@ import {
 } from '../apiClient'
 import AddActivityForm from './AddActivityForm'
 
-function UpdateActivity(props) {
+function UpdateActivities(props) {
   const [updating, setUpdating] = useState(false)
   const activities = props.activities
-  const activity = activities.map((activity) => activity)
-  console.log('13', activity)
   return updating ? (
     <AddActivityForm
-      apiGetActivity={apiGetActivity}
-      activity={activity}
+      apiUpdateActivity={apiUpdateActivity}
+      activities={activities}
       variant="update"
       setUpdating={setUpdating}
     />
   ) : (
     <div>
       <div>
-        <p>{activity.name}</p>
+        <p>{activities.name}</p>
       </div>
       <button className="button" onClick={() => setUpdating(true)}>
         Update
-      </button>
-      <button
-        className="button"
-        onClick={(e) => {
-          e.preventDefault()
-          return apiDeleteActivity(activity.id).then(() => {
-            apiGetActivities()
-          })
-        }}
-      >
-        Delete
       </button>
     </div>
   )
@@ -93,4 +80,4 @@ function UpdateActivity(props) {
 //   )
 // }
 
-export default UpdateActivity
+export default UpdateActivities

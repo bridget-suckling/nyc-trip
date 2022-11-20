@@ -15,7 +15,6 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const activity = req.body
-  console.log('routes', activity)
   return db
     .addActivity(activity)
 

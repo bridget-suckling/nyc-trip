@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { apiGetActivities } from '../apiClient'
-import UpdateActivity from './UpdateActivities'
+import { apiGetActivities, apiDeleteActivity } from '../apiClient'
+import UpdateActivities from './UpdateActivities'
+import DeleteActivity from './DeleteActivity'
 
 function Activities() {
   const [activities, setActivities] = useState([])
@@ -13,6 +14,18 @@ function Activities() {
         console.log(e)
       })
   }, [])
+
+  function handleDeleteButton(id) {
+    apiDeleteActivity(id)
+      .then(() => apiGetActivities())
+      .then((activitiesData) => {
+        setActivities(activitiesData)
+      })
+      .catch((e) => {
+        console.log(e)
+      })
+  }
+
   return (
     <>
       <h1>Activities:</h1>
@@ -24,7 +37,11 @@ function Activities() {
                 {name}
               </a>
               <em> ({type})</em>
-              <UpdateActivity activities={activities} />
+              <UpdateActivities activities={activities} />
+              <DeleteActivity
+                handleDeleteButton={handleDeleteButton}
+                activityId={id}
+              />
             </li>
           ))}
         </ul>
