@@ -1,10 +1,5 @@
 import request from 'superagent'
-// const locationsUrl = '/api/v1/locations'
 const activitiesUrl = '/api/v1/activities'
-
-// export function apiGetLocations() {
-//   return request.get(locationsUrl).then((res) => res.body)
-// }
 
 export function apiGetActivities() {
   return request.get(activitiesUrl).then((res) => res.body)
@@ -15,10 +10,6 @@ export function apiGetActivity(id) {
     .get(activitiesUrl)
     .where('id', id)
     .then((res) => res.body)
-}
-
-export function apiGetActivitiesAtLocation(id) {
-  return request.get(`/api/v1/locations/${id}`).then((res) => res.body)
 }
 
 export function apiAddActivity(form) {
