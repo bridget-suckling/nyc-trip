@@ -1,5 +1,17 @@
-# React Boilerplate
+# Trip planner for New York City
+## Brief
+- A form to input activities to do in New York.
+- View lists of activities by location
+- Edit existing activities
+- Delete existing activities
 
+## Other goals
+- Display a map to for each location
+- View activities by type
+- View activities by best time of day to visit
+- Be able to select activities from the filtered list to make a customised list
+
+## Using React Boilerplate
 ## Packages Included
 
 - react (webpack, babel, etc.)
@@ -7,18 +19,3 @@
 - express
 - jest
 - eslint
-
-## Setup
-
-- [ ] Clone this repo, navigate to it, install packages, and start the server with `npm run dev`
-  <details style="padding-left: 2em">
-    <summary>Tip</summary>
-
-    ```sh
-    npm install
-    npm run dev
-    ```
-  </details>
-
----
-[Provide feedback on this repo](https://docs.google.com/forms/d/e/1FAIpQLSfw4FGdWkLwMLlUaNQ8FtP2CTJdGDUv6Xoxrh19zIrJSkvT4Q/viewform?usp=pp_url&entry.1958421517=boilerplate-react)
