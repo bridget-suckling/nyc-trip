@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { apiDeleteActivity } from '../apis/apiClient'
+import { apiDeleteActivity } from '../apis/activities'
 import { fetchLocationsAndActivities } from '../apis/locations'
 import DeleteActivity from './DeleteActivity'
 import AddActivityForm from './AddActivityForm'

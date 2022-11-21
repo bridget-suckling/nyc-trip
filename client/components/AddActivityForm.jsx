@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { apiAddActivity, apiUpdateActivity } from '../apis/apiClient'
+import { apiAddActivity, apiUpdateActivity } from '../apis/activities'
 
 function AddActivityForm(props) {
   const activity = props.activity
