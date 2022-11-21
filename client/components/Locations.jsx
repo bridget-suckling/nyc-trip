@@ -1,8 +1,10 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 function Locations(props) {
-  const locations = props.locations
   const handleChange = props.handleChange
+
+  const locations = useSelector((globalState) => globalState.locations)
 
   return (
     <>
@@ -15,11 +17,12 @@ function Locations(props) {
           name="location_id"
           id="location_id"
           onChange={handleChange}
+          // value={locations.location_id}
           value={locations.location_id}
         >
           <option value="0">--- Select location ---</option>
-          {props.locations &&
-            props.locations.map(({ id, name }) => (
+          {locations &&
+            locations.map(({ id, name }) => (
               <option key={id} value={id}>
                 {name}
               </option>

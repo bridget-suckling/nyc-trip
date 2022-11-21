@@ -4,19 +4,23 @@ import Activities from './Activities'
 import Home from './Home'
 import Type from './Type'
 import AddActivityForm from './AddActivityForm'
-import { apiGetLocations } from '../apiClient'
+import { fetchLocationsAction } from '../Actions/index'
+// import { apiGetLocations } from '../apiClient'
+import { useSelector, useDispatch } from 'react-redux'
 
 function App() {
-  const [locations, setLocations] = useState([])
+  // const locations = useSelector((state) => state.locations)
+  const dispatch = useDispatch()
+  // const [locations, setLocations] = useState([])
 
   useEffect(() => {
-    apiGetLocations()
-      .then((locationsData) => {
-        setLocations(locationsData)
-      })
-      .catch((e) => {
-        console.log(e)
-      })
+    dispatch(fetchLocationsAction())
+    // .then((locationsData) => {
+    //   setLocations(locationsData)
+    // })
+    // .catch((e) => {
+    //   console.log(e)
+    // })
   }, [])
   return (
     <>
@@ -27,12 +31,10 @@ function App() {
           <Route path="/" />
           <Route
             path="/activities"
-            element={<Activities locations={locations} />}
+            // element={<Activities locations={locations} />}
+            element={<Activities />}
           />
-          <Route
-            path="/add"
-            element={<AddActivityForm locations={locations} />}
-          />
+          <Route path="/add" element={<AddActivityForm />} />
           <Route path="/type" element={<Type />} />
         </Routes>
       </main>
