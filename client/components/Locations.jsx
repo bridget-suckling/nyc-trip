@@ -9,7 +9,7 @@ function Locations(props) {
   return (
     <>
       <div>
-        <label htmlFor="location_id">View activities by location</label>
+        <label htmlFor="location_id">View by location</label>
         <br></br>
         <select
           className="largeinput"
@@ -17,7 +17,6 @@ function Locations(props) {
           name="location_id"
           id="location_id"
           onChange={handleChange}
-          // value={locations.location_id}
           value={locations.location_id}
         >
           <option value="0">--- Select location ---</option>
