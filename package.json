@@ -11,7 +11,7 @@
     "server": "node server",
     "client:watch": "npm run webpack -- --watch",
     "server:watch": "nodemon server",
-    "test": "jest --watch --noStackTrace",
+    "test": "jest --watchAll ",
     "knex": "knex --knexfile ./server/db/knexfile.js",
     "lint": "eslint --ext .js,.jsx ."
   },
