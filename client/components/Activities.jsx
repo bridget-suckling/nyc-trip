@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import {
   apiGetActivitiesAtLocation,
   apiDeleteActivity,
@@ -7,9 +8,10 @@ import DeleteActivity from './DeleteActivity'
 import AddActivityForm from './AddActivityForm'
 import Locations from './Locations'
 
-function Activities(props) {
+function Activities() {
   const [activities, setActivities] = useState([])
   const [filterId, setFilterId] = useState('0')
+  const locations = useSelector((globalState) => globalState.locations)
 
   useEffect(() => {
     apiGetActivitiesAtLocation(filterId)
@@ -38,7 +40,7 @@ function Activities(props) {
 
   return (
     <>
-      <Locations locations={props.locations} handleChange={handleChange} />
+      <Locations locations={locations} handleChange={handleChange} />
       <section>
         <br></br>
         <ul>
@@ -49,10 +51,7 @@ function Activities(props) {
               </a>
               <em> ({activity.type})</em>
               <> </>
-              <AddActivityForm
-                activity={activity}
-                locations={props.locations}
-              />
+              <AddActivityForm activity={activity} locations={locations} />
               <DeleteActivity
                 handleDeleteButton={handleDeleteButton}
                 activityId={activity.id}

@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { apiAddActivity, apiUpdateActivity } from '../apis/apiClient'
 
 function AddActivityForm(props) {
   const activity = props.activity
+  const locations = useSelector((globalState) => globalState.locations)
 
   const newActivity = {
     name: '',
@@ -101,8 +103,8 @@ function AddActivityForm(props) {
                 value={form.location_id}
               >
                 <option value="">--- Select location ---</option>
-                {props.locations &&
-                  props.locations.map(({ id, name }) => (
+                {locations &&
+                  locations.map(({ id, name }) => (
                     <option key={id} value={id}>
                       {name}
                     </option>

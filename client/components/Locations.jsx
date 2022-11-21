@@ -2,12 +2,9 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 function Locations(props) {
-  // const locations = props.locations
   const handleChange = props.handleChange
 
-  // const locations = useSelector((state) => state.locations)
   const locations = useSelector((globalState) => globalState.locations)
-  console.log('jsx', locations)
 
   return (
     <>

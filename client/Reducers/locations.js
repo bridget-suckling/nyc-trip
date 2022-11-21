@@ -1,6 +1,8 @@
 import { RECEIVE_LOCATIONS } from '../Actions'
 
-function locationsReducer(state = [], action) {
+const initialState = []
+
+function locationsReducer(state = initialState, action) {
   const { type, payload } = action
   switch (type) {
     case RECEIVE_LOCATIONS:
