@@ -29,7 +29,7 @@ describe('<Activities />', () => {
       ])
     )
     render(<Activities />)
-    console.log(fetchLocationsAndActivities.mock.calls)
+    // console.log(fetchLocationsAndActivities.mock.calls)
 
     // expect(fetchLocationsAndActivities.mock.calls).toHaveLength(1)
     return waitFor(
