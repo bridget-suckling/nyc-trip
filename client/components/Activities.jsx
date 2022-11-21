@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { apiDeleteActivity } from '../apis/activities'
 import { fetchLocationsAndActivities } from '../apis/locations'
 import DeleteActivity from './DeleteActivity'
-import AddActivityForm from './AddActivityForm'
+import ActivityForm from './ActivityForm'
 import Locations from './Locations'
 
 function Activities() {
@@ -49,7 +49,7 @@ function Activities() {
               </a>
               <em> ({activity.type})</em>
               <> </>
-              <AddActivityForm activity={activity} locations={locations} />
+              <ActivityForm activity={activity} locations={locations} />
               <DeleteActivity
                 handleDeleteButton={handleDeleteButton}
                 activityId={activity.id}

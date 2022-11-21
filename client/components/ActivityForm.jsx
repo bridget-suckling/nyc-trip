@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { apiAddActivity, apiUpdateActivity } from '../apis/activities'
 
-function AddActivityForm(props) {
+function ActivityForm(props) {
   const activity = props.activity
   const locations = useSelector((globalState) => globalState.locations)
 
@@ -169,4 +169,4 @@ function AddActivityForm(props) {
   )
 }
 
-export default AddActivityForm
+export default ActivityForm
