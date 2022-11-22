@@ -32,17 +32,18 @@ describe('get /api/v1/locations', () => {
 })
 
 describe('get /api/v1/locations/:id', () => {
-  test('returns one location in json', () => {
-    db.getAllLocations.mockReturnValue(
-      Promise.resolve([{ id: 2, name: 'Upper East Side' }])
+  test('returns activities at the specified location in json', () => {
+    db.getAllActivities.mockReturnValue(
+      Promise.resolve([{ id: 1, name: 'Met Museum' }])
     )
     db.getActivitiesByLocation.mockReturnValue(
-      Promise.resolve([{ id: 1, name: 'Met Museum' }])
+      Promise.resolve([{ id: 2, name: 'Upper East Side' }])
     )
     return request(server)
       .get('/api/v1/locations/2')
       .then((res) => {
-        expect(res.body[0].name).toBe('Met Museum')
+        console.log(res.body)
+        expect(res.body[0].name).toBe('Upper East Side')
         expect(res.body).toHaveLength(1)
       })
   })
