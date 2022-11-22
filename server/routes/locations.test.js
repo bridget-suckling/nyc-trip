@@ -42,7 +42,6 @@ describe('get /api/v1/locations/:id', () => {
     return request(server)
       .get('/api/v1/locations/2')
       .then((res) => {
-        console.log(res.body)
         expect(res.body[0].name).toBe('Upper East Side')
         expect(res.body).toHaveLength(1)
       })
