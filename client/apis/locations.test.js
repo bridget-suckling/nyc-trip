@@ -17,17 +17,17 @@ describe('fetchLocations', () => {
   })
 })
 
-// describe('fetchLocationsAndActivities', () => {
-//   it('gets all the activities at a location', () => {
-//     const scope = nock('http://localhost')
-//       .get('/api/v1/locations')
-//       .reply(200, [
-//         { id: 1, name: 'Upper West Side' },
-//         { id: 2, name: 'Upper East Side' },
-//       ])
-//     return fetchLocationsAndActivities(1).then(() => {
-//       expect(location).toBe('Upper West Side')
-//       expect(scope.isDone()).toBe(true)
-//     })
-//   })
-// })
+describe('fetchLocationsAndActivities', () => {
+  it.skip('gets all the activities at a location', () => {
+    const scope = nock('http://localhost')
+      .get('/api/v1/locations')
+      .reply(200, [
+        { id: 1, name: 'Upper West Side' },
+        { id: 2, name: 'Upper East Side' },
+      ])
+    return fetchLocationsAndActivities(1).then(() => {
+      expect(location).toBe('Upper West Side')
+      expect(scope.isDone()).toBe(true)
+    })
+  })
+})
