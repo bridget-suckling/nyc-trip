@@ -46,6 +46,20 @@ describe('get /api/v1/locations/:id', () => {
         expect(res.body).toHaveLength(1)
       })
   })
+  test('returns all activities if location is not specified', () => {
+    db.getAllActivities.mockReturnValue(
+      Promise.resolve([
+        { id: 1, name: 'Upper West Side' },
+        { id: 2, name: 'Upper East Side' },
+      ])
+    )
+    db.getActivitiesByLocation.mockReturnValue(Promise.resolve([{ id: 0 }]))
+    return request(server)
+      .get('/api/v1/locations/0')
+      .then((res) => {
+        expect(res.body).toHaveLength(2)
+      })
+  })
 
   test('returns 500 and logs error message when error', () => {
     db.getActivitiesByLocation.mockImplementation(() => Promise.reject('error'))
