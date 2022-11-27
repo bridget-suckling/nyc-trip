@@ -2,7 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 
 import { useSelector } from 'react-redux'
-import Locations from './Locations'
+import Locations from '../Locations'
 
 jest.mock('react-redux')
 jest.mock('./Locations')

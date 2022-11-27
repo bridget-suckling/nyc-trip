@@ -2,13 +2,13 @@ import React from 'react'
 import { render, screen, waitFor } from '@testing-library/react'
 
 // import { apiGetActivities } from '../apis/activities'
-import { apiDeleteActivity } from '../apis/activities'
-import { fetchLocationsAndActivities } from '../apis/locations'
+import { apiDeleteActivity } from '../../apis/activities'
+import { fetchLocationsAndActivities } from '../../apis/locations'
 import { useSelector, useDispatch } from 'react-redux'
-import Activities from './Activities'
-import Locations from './Locations'
-import ActivityForm from './ActivityForm'
-import DeleteActivity from './DeleteActivity'
+import Activities from '../Activities'
+import Locations from '../Locations'
+import ActivityForm from '../ActivityForm'
+import DeleteActivity from '../DeleteActivity'
 
 jest.mock('react-redux')
 // jest.mock('./Locations')
