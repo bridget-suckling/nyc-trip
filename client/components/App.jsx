@@ -23,7 +23,6 @@ function App() {
           <Route path="/" />
           <Route path="/activities" element={<Activities />} />
           <Route path="/add" element={<ActivityForm />} />
-          <Route path="/type" element={<Type />} />
         </Routes>
       </main>
     </>
