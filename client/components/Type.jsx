@@ -1,19 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function Type(props) {
-  const types = props.types
+  const [type, setType] = useState('')
+
+  function handleChange(event) {
+    const type = event.target.value
+    props.onChange(type)
+    setType(type)
+  }
 
   return (
     <>
       <div>
-        <label htmlFor="location_id">View activities by type</label>
+        <label htmlFor="type">View by type</label>
         <br></br>
         <select
           className="largeinput"
           type="text"
-          name="location_id"
-          id="location_id"
-          value={types}
+          name="type"
+          id="type"
+          onChange={handleChange}
+          value={type}
         >
           <option value="">--- Select activity type ---</option>
           <option value="Food">Food</option>
