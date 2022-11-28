@@ -23,8 +23,8 @@ function App() {
           <Route path="/" />
           <Route path="/activities" element={<Activities />} />
           <Route path="/add" element={<ActivityForm />} />
-          <Route path="/map" element={<Map />} />
         </Routes>
+        <Map />
       </main>
     </>
   )

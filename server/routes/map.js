@@ -7,7 +7,7 @@ const router = express.Router()
 router.get('/', (req, res) => {
   request
     .get(
-      `https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/-73.9781,40.7511,11.03,0/300x400?access_token=${apiKey}`
+      `https://api.mapbox.com/v4/mapbox.mapbox-streets-v8/12/1171/1566.mvt?style=mapbox://styles/mapbox/streets-v12@00&access_token=${apiKey}`
     )
     .then((response) => {
       res.json(response.body)
