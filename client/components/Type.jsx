@@ -12,7 +12,7 @@ function Type(props) {
   return (
     <>
       <div>
-        <label htmlFor="type">View by type</label>
+        <label htmlFor="type">Type</label>
         <br></br>
         <select
           className="largeinput"

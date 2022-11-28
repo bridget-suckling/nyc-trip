@@ -66,7 +66,6 @@ function Activities() {
                 <a href={activity.url} target="blank">
                   {activity.name}
                 </a>
-                <em> ({activity.type})</em>
                 <> </>
                 <ActivityForm activity={activity} locations={locations} />
                 <DeleteActivity

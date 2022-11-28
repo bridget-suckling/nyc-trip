@@ -12,7 +12,7 @@ function Time(props) {
   return (
     <>
       <div>
-        <label htmlFor="time">View by time of day</label>
+        <label htmlFor="time">Time of day</label>
         <br></br>
         <select
           className="largeinput"

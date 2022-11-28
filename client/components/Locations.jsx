@@ -9,7 +9,7 @@ function Locations(props) {
   return (
     <>
       <div>
-        <label htmlFor="location_id">View by location</label>
+        <label htmlFor="location_id">Location</label>
         <br></br>
         <select
           className="largeinput"
