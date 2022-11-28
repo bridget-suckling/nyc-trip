@@ -6,11 +6,13 @@ import DeleteActivity from './DeleteActivity'
 import ActivityForm from './ActivityForm'
 import Locations from './Locations'
 import Type from './Type'
+import Time from './Time'
 
 function Activities() {
   const [activities, setActivities] = useState([])
   const [filterId, setFilterId] = useState('0')
   const [activityType, setActivityType] = useState(null)
+  const [activityTime, setActivityTime] = useState(null)
   const locations = useSelector((globalState) => globalState.locations)
 
   useEffect(() => {
@@ -42,6 +44,7 @@ function Activities() {
     <>
       <Locations locations={locations} handleChange={handleChange} />
       <Type onChange={setActivityType} />
+      <Time onChange={setActivityTime} />
       <section>
         <br></br>
         <ul>
@@ -51,6 +54,12 @@ function Activities() {
                 activityType == null ||
                 activityType == '' ||
                 activity.type === activityType
+            )
+            .filter(
+              (activity) =>
+                activityTime == null ||
+                activityTime == '' ||
+                activity.time === activityTime
             )
             .map((activity) => (
               <li key={activity.id}>
