@@ -26,10 +26,10 @@ function Activities() {
       })
   }, [filterId])
 
-  function handleDeleteButton(id) {
+  function handleDeleteButton(activity, id) {
     Swal.fire({
       title: 'Wait a sec...',
-      text: 'Are you sure you want to delete this?',
+      text: `Are you sure you want to delete ${activity.name}?`,
       confirmButtonText: 'Delete',
       showCancelButton: true,
     })
@@ -67,7 +67,7 @@ function Activities() {
       </div>
       <section>
         <br></br>
-        <ul>
+        <ul className="flexList">
           {activities
             .filter(
               (activity) =>
@@ -82,7 +82,7 @@ function Activities() {
                 activity.time === activityTime
             )
             .map((activity) => (
-              <li key={activity.id}>
+              <li className="flexListItem" key={activity.id}>
                 <a href={activity.url} target="blank">
                   {activity.name}
                 </a>
@@ -91,6 +91,7 @@ function Activities() {
                 <DeleteActivity
                   handleDeleteButton={handleDeleteButton}
                   activityId={activity.id}
+                  activityName={activity.name}
                 />
               </li>
             ))}

@@ -67,3 +67,15 @@ select {
   align-items: center;
   gap: 20px;
  }
+
+ .flexList{
+  display: flex; 
+  flex-wrap: wrap;
+  align-items: center;
+ }
+ .flexListItem{
+  display: flex; 
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+ }
