@@ -22,7 +22,7 @@ function Type(props) {
           onChange={handleChange}
           value={type}
         >
-          <option value="">--- Select activity type ---</option>
+          <option value="">--- Select type ---</option>
           <option value="Food">Food</option>
           <option value="Museum or gallery">Museum / gallery</option>
           <option value="Shopping">Shopping</option>

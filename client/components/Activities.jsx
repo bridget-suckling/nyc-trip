@@ -83,16 +83,18 @@ function Activities() {
             )
             .map((activity) => (
               <li className="flexListItem" key={activity.id}>
-                <a href={activity.url} target="blank">
+                <a className="headinglink" href={activity.url} target="blank">
                   {activity.name}
                 </a>
-                <> </>
-                <ActivityForm activity={activity} locations={locations} />
-                <DeleteActivity
-                  handleDeleteButton={handleDeleteButton}
-                  activityId={activity.id}
-                  activityName={activity.name}
-                />
+
+                <div className="buttonBox">
+                  <ActivityForm activity={activity} locations={locations} />
+                  <DeleteActivity
+                    handleDeleteButton={handleDeleteButton}
+                    activityId={activity.id}
+                    activityName={activity.name}
+                  />
+                </div>
               </li>
             ))}
         </ul>
