@@ -60,9 +60,11 @@ function Activities() {
 
   return (
     <>
-      <Locations locations={locations} handleChange={handleChange} />
-      <Type onChange={setActivityType} />
-      <Time onChange={setActivityTime} />
+      <div className="filterContainer">
+        <Locations locations={locations} handleChange={handleChange} />
+        <Type onChange={setActivityType} />
+        <Time onChange={setActivityTime} />
+      </div>
       <section>
         <br></br>
         <ul>
