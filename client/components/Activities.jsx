@@ -7,6 +7,7 @@ import ActivityForm from './ActivityForm'
 import Locations from './Locations'
 import Type from './Type'
 import Time from './Time'
+import Swal from 'sweetalert2'
 
 function Activities() {
   const [activities, setActivities] = useState([])
@@ -26,6 +27,23 @@ function Activities() {
   }, [filterId])
 
   function handleDeleteButton(id) {
+    Swal.fire({
+      title: 'Wait a sec...',
+      text: 'Are you sure you want to delete this?',
+      confirmButtonText: 'Delete',
+      showCancelButton: true,
+    })
+      .then((result) => {
+        if (result.isConfirmed) {
+          handleDelete(id)
+        }
+      })
+      .catch((e) => {
+        console.log(e)
+      })
+  }
+
+  function handleDelete(id) {
     apiDeleteActivity(id)
       .then(() => fetchLocationsAndActivities(filterId))
       .then((activitiesData) => {
